@@ -11,6 +11,7 @@ cask install beardedspice
 cask install chromecast
 cask install cyberduck
 cask install dropbox
+cask install eclipse-ide
 cask install firefox
 cask install flux
 cask install genymotion
