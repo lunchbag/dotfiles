@@ -11,3 +11,9 @@ eval "$(rbenv init - zsh)"
 # OPTIONS
 ulimit -n 10240
 bindkey -v
+
+# IMPORTS
+for file in ~/.{path,export,alias,function,extra}; do
+  [ -r "$file" ] && [ -f "$file" ] && source "$file"
+done
+unset file
