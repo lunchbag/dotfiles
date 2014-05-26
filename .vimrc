@@ -56,6 +56,7 @@ set shortmess=atI
 set scrolloff=3
 set backupdir=~/.vim/backups
 set directory=~/.vim/swaps
+set viminfo+=n~/.vim/info
 if exists("&undodir")
 	set undodir=~/.vim/undo
 endif

@@ -14,17 +14,7 @@ To run/update:
 cd ~/.dotfiles && source bootstrap.sh
 ```
 
-Alternatively, to update while avoiding the confirmation prompt:
-
-```bash
-set -- -f; source bootstrap.sh
-```
-
-To update later on, just run that command again.
-
 ### Specify the `$PATH`
-
-If `~/.path` exists, it will be sourced along with the other files, before any feature testing (such as [detecting which version of `ls` is being used](https://github.com/mathiasbynens/dotfiles/blob/aff769fd75225d8f2e481185a71d5e05b76002dc/.aliases#L21-26)) takes place.
 
 Here’s an example `~/.path` file that adds `~/utils` to the `$PATH`:
 

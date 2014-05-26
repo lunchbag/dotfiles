@@ -16,10 +16,6 @@ install moreutils
 install findutils
 # Install GNU `sed`, overwriting the built-in `sed`
 install gnu-sed --default-names
-# Install Bash 4
-# Note: don’t forget to add `/usr/local/bin/bash` to `/etc/shells` before running `chsh`.
-install bash
-install bash-completion
 
 # Install wget with IRI support
 install wget --enable-iri
@@ -42,11 +38,14 @@ install python
 install gradle
 install git-extras
 install rbenv
+install rbenv-gem-rehash
 install macvim
 install maven
 install ant
 install go
 install ivy
+install mysql
+install nexus
 
 # Remove outdated versions from the cellar
 cleanup
