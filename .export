@@ -23,3 +23,13 @@ export GREP_OPTIONS="--color=auto"
 
 # Link Homebrew casks in `/Applications` rather than `~/Applications`
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
+# Setup Java!
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)
+
+# Setup Android!
+export ANDROID_HOME=$HOME/.android-sdk
+export ANDROID_SDK=$ANDROID_HOME
+
+# Setup Go!
+export GOPATH=$HOME/.go

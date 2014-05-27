@@ -12,7 +12,7 @@ eval "$(rbenv init - zsh)"
 ulimit -n 10240
 
 # IMPORTS
-for file in ~/.{path,export,alias,function,extra}; do
+for file in ~/.{export,path,alias,function,extra}; do
   [ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
 unset file

@@ -11,7 +11,7 @@ else # OS X `ls`
 fi
 
 # Turn on hub extras
-alias git=hub
+#alias git=hub
 
 # Shortcut to ssh into website
 alias jstarry.com="ssh root@192.241.203.85"
