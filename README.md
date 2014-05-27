@@ -11,7 +11,7 @@ git clone https://github.com/jstarry/dotfiles.git .dotfiles
 To run/update:
 
 ```bash
-cd ~/.dotfiles && ./bootstrap.sh
+cd ~/.dotfiles && . ./bootstrap.sh
 ```
 
 ### Specify the `$PATH`
