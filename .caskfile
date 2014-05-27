@@ -26,7 +26,6 @@ cask install macvim
 cask install onepassword
 cask install rdio
 cask install skype
-cask install sparrow
 cask install utorrent
 cask install vagrant
 cask install virtualbox
