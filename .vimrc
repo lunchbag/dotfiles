@@ -23,6 +23,7 @@ Plugin 'vim-scripts/csv.vim'
 Plugin 'tpope/vim-git'
 Plugin 'mmalecki/vim-node.js'
 Plugin 'vim-ruby/vim-ruby'
+Plugin 'elzr/vim-json'
 
 " Utilities
 Plugin 'scrooloose/nerdcommenter'
