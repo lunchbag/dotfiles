@@ -1,8 +1,8 @@
 [alias]
   st = status
   ci = commit
-  br = branch
-  bv = branch -v -v
+  db = branch -D
+  br = "!python ~/.scripts/git-tree.py"
   cp = cherry-pick
   co = checkout
   dc = diff --cached
@@ -16,6 +16,7 @@
   au = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; git add `f`"
   rc = rebase --continue
   ra = rebase --abort
+  pr = pull --rebase
 [apply]
   whitespace = fix
 [color]
