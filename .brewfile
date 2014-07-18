@@ -37,6 +37,7 @@ install hub
 install python
 install gradle
 install git-extras
+install ruby-build
 install rbenv
 install rbenv-gem-rehash
 install macvim
