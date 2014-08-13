@@ -6,11 +6,11 @@ import re
 from colorama import Fore, Back
 import sys
 
-tracking_regex = re.compile(r'([a-zA-Z][a-zA-Z0-9\-_]*)\s+([a-f0-9]+)\s+\[(.+)\]\s+(.+)')
-untracking_regex = re.compile(r'([a-zA-Z][a-zA-Z0-9\-_]*)\s+([a-f0-9]+)\s+(.+)')
+tracking_regex = re.compile(r'([a-zA-Z][a-zA-Z0-9\-_\/]*)\s+([a-f0-9]+)\s+\[(.+)\]\s+(.+)')
+untracking_regex = re.compile(r'([a-zA-Z][a-zA-Z0-9\-_\/]*)\s+([a-f0-9]+)\s+(.+)')
 
 class Branch:
-    def __init__(self, name, commit_hash, commit_msg, current, tracking = None, ahead = 0, behind = 0):
+    def __init__(self, name, commit_hash, commit_msg, current, tracking = None, ahead = 0, behind = 0, broken = False):
         self.name = name
         self.commit_hash = commit_hash
         self.commit_msg = commit_msg
@@ -21,6 +21,7 @@ class Branch:
         self.branches = []
         self.parent = None
         self.last = False
+        self.broken = broken
         self.indent_string = ''
     def __str__(self):
         prefix_length = self.indent * 4 + len(self.name) + 1
@@ -42,6 +43,8 @@ class Branch:
                         branch_str += ","
                 if self.behind > 0:
                     branch_str += " behind " + str(self.behind)
+            if self.broken:
+                branch_str += ": gone"
             branch_str += "]"
         branch_str += " " + self.commit_msg
         return branch_str
@@ -54,6 +57,7 @@ def parseTrackingBranch(current, match):
     commit_msg = match.group(4)
     ahead_count = 0
     behind_count = 0
+    broken = False
 
     tracking_info = match.group(3).split(':')
     tracking_branch = tracking_info[0]
@@ -62,12 +66,15 @@ def parseTrackingBranch(current, match):
         for status in tracking_status:
             status = status.split()
             status_type = status[0]
+            if status_type == 'gone':
+                broken = True
+                break
             status_count = status[1]
             if status_type == 'ahead':
                 ahead_count = int(status_count)
             else:
                 behind_count = int(status_count)
-    return Branch(name, commit_hash, commit_msg, current, tracking_branch, ahead_count, behind_count)
+    return Branch(name, commit_hash, commit_msg, current, tracking_branch, ahead_count, behind_count, broken)
 
 def parseUntrackingBranch(current, match):
     name = match.group(1)
@@ -100,7 +107,7 @@ def process(branches):
     for branch in branches:
         mapping[branch.name] = branch
     for branch in branches:
-        if branch.tracking is None or branch.tracking.find('origin/') >= 0:
+        if branch.tracking is None or branch.tracking.find('origin/') >= 0 or branch.broken:
             root_branches.append(branch)
         else:
             mapping[branch.tracking].branches.append(branch)
