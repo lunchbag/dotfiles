@@ -39,6 +39,7 @@ install gradle
 install git-extras
 install ruby-build
 install rbenv
+install rbenv-gemsets
 install rbenv-gem-rehash
 install macvim
 install maven
