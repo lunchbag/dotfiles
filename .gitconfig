@@ -17,7 +17,7 @@
   rc = rebase --continue
   re = branch -m
   ra = rebase --abort
-  pr = pull --rebase
+  pr = pull --rebase -p
 [apply]
   whitespace = fix
 [color]
