@@ -6,8 +6,8 @@ import re
 from colorama import Fore, Back
 import sys
 
-tracking_regex = re.compile(r'([a-zA-Z][a-zA-Z0-9\-_\/]*)\s+([a-f0-9]+)\s+\[(.+)\]\s+(.+)')
-untracking_regex = re.compile(r'([a-zA-Z][a-zA-Z0-9\-_\/]*)\s+([a-f0-9]+)\s+(.+)')
+tracking_regex = re.compile(r'([a-zA-Z][a-zA-Z0-9\-\._\/]*)\s+([a-f0-9]+)\s+\[(.+)\]\s+(.+)')
+untracking_regex = re.compile(r'([a-zA-Z][a-zA-Z0-9\-\._\/]*)\s+([a-f0-9]+)\s+(.+)')
 
 class Branch:
     def __init__(self, name, commit_hash, commit_msg, current, tracking = None, ahead = 0, behind = 0, broken = False):
