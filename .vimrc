@@ -26,6 +26,7 @@ Plugin 'vim-ruby/vim-ruby'
 Plugin 'elzr/vim-json'
 Plugin 'tpope/vim-haml'
 Plugin 'burnettk/vim-angular'
+Plugin 'udalov/kotlin-vim'
 
 " Utilities
 Plugin 'scrooloose/nerdcommenter'
