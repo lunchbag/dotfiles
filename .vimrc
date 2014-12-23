@@ -7,9 +7,6 @@ call vundle#begin()
 " Vundle
 Plugin 'gmarik/Vundle.vim'
 
-" Themes
-Plugin 'chriskempson/base16-vim'
-
 " Syntax Plugins
 Plugin 'pangloss/vim-javascript'
 Plugin 'kchmck/vim-coffee-script'
@@ -45,7 +42,6 @@ filetype plugin on
 filetype plugin indent on
 syntax on
 
-set guifont=Source\ Code\ Pro\ for\ Powerline:h12
 set number
 set nowrap
 set hlsearch
@@ -71,4 +67,3 @@ let NERDTreeHijackNetrw = 0
 autocmd vimenter * if !argc() | NERDTree | wincmd l | endif
 let NERDTreeIgnore=['^components/', '^node_modules/']
 au VimEnter * if argc() && isdirectory(expand('%')) | cd % | NERDTree | wincmd l | new | wincmd j | q | endif
-let g:Powerline_symbols = 'fancy'

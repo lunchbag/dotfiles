@@ -19,9 +19,6 @@ alias gti=git
 # Shortcut to ssh into website
 alias jstarry.com="ssh root@192.241.203.85"
 
-# Cask shortcut
-alias cask="brew cask"
-
 # List all files colorized in long format
 alias l="ls -lF ${colorflag}"
 
