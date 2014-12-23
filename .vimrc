@@ -73,6 +73,7 @@ set gdefault
 set noerrorbells
 set shortmess=atI
 set scrolloff=3
+set backspace=indent,eol,start
 set backupdir=~/.vim/backups
 set directory=~/.vim/swaps
 set viminfo+=n~/.vim/info
