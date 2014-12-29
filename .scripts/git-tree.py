@@ -4,10 +4,24 @@
 import subprocess
 import re
 from colorama import Fore, Back
+from pyparsing import *
 import sys
 
 tracking_regex = re.compile(r'([a-zA-Z0-9\-\._\/]*)\s+([a-f0-9]+)\s+\[(.+)\]\s+(.+)')
 untracking_regex = re.compile(r'([a-zA-Z0-9\-\._\/]*)\s+([a-f0-9]+)\s+(.+)')
+
+ESC = Literal('\x1b')
+integer = Word(nums)
+escapeSeq = Combine(ESC + '[' + Optional(delimitedList(integer,';')) + oneOf(list(alphas)))
+nonAnsiString = lambda s : Suppress(escapeSeq).transformString(s)
+
+def terminal_width():
+    import fcntl, termios, struct
+    h, w, hp, wp = struct.unpack('HHHH',
+        fcntl.ioctl(0, termios.TIOCGWINSZ,
+        struct.pack('HHHH', 0, 0, 0, 0)))
+    return w
+term_width = terminal_width()
 
 class Branch:
     def __init__(self, name, commit_hash, commit_msg, current, tracking = None, ahead = 0, behind = 0, broken = False):
@@ -46,7 +60,14 @@ class Branch:
             if self.broken:
                 branch_str += ": gone"
             branch_str += "]"
-        branch_str += " " + self.commit_msg
+        current_len = len(nonAnsiString(branch_str))
+        if current_len > term_width: return branch_str
+        commit_msg = " " + self.commit_msg
+        if current_len + len(commit_msg) > term_width:
+            trimmed_len = term_width - current_len - 3
+            branch_str += commit_msg[:trimmed_len] + '...'
+        else:
+            branch_str += commit_msg
         return branch_str
     def __gt__(self, other):
         return self.name > other.name
