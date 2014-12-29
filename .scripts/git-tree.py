@@ -61,7 +61,7 @@ class Branch:
                 branch_str += ": gone"
             branch_str += "]"
         current_len = len(nonAnsiString(branch_str))
-        if current_len > term_width: return branch_str
+        if current_len + 1 >= term_width: return branch_str
         commit_msg = " " + self.commit_msg
         if current_len + len(commit_msg) > term_width:
             trimmed_len = term_width - current_len - 3
