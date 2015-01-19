@@ -128,7 +128,7 @@ def process(branches):
     for branch in branches:
         mapping[branch.name] = branch
     for branch in branches:
-        if branch.tracking is None or branch.tracking.find('origin/') >= 0 or branch.broken:
+        if branch.tracking is None or branch.tracking.find('/') >= 0 or branch.broken:
             root_branches.append(branch)
         else:
             mapping[branch.tracking].branches.append(branch)
