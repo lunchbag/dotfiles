@@ -36,7 +36,6 @@ install zsh
 install hub
 install python
 install gradle
-install git-extras
 install ruby-build
 install rbenv
 install rbenv-gemsets
