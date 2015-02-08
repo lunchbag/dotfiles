@@ -23,6 +23,7 @@ Plugin 'elzr/vim-json'
 Plugin 'tpope/vim-haml'
 Plugin 'burnettk/vim-angular'
 Plugin 'udalov/kotlin-vim'
+Plugin 'mxw/vim-jsx'
 
 " Utilities
 Plugin 'scrooloose/nerdcommenter'
