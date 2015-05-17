@@ -18,6 +18,7 @@
   re = branch -m
   ra = rebase --abort
   pr = pull --rebase -p
+  undo = "!git reset --soft HEAD@{1}; git reset HEAD"
 [apply]
   whitespace = fix
 [color]
@@ -41,4 +42,4 @@
   editor = /usr/bin/vim
   excludesfile = ~/.gitignore
 [push]
-  default = matching
+  default = simple
