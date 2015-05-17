@@ -24,6 +24,7 @@ Plugin 'tpope/vim-haml'
 Plugin 'burnettk/vim-angular'
 Plugin 'udalov/kotlin-vim'
 Plugin 'mxw/vim-jsx'
+Plugin 'fatih/vim-go'
 
 " Utilities
 Plugin 'scrooloose/nerdcommenter'
@@ -37,6 +38,7 @@ Plugin 'ap/vim-css-color'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'Lokaltog/vim-powerline'
 Plugin 'vim-scripts/CycleColor'
+Plugin 'kien/ctrlp.vim'
 
 call vundle#end()
 filetype plugin on
