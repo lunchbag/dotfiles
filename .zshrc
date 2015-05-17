@@ -5,7 +5,7 @@ done
 unset file
 
 # OH-MY-ZSH
-plugins=(brew bower git gradle osx vagrant)
+plugins=(brew bower git osx vagrant)
 source $ZSH/oh-my-zsh.sh
 
 # RBENV
