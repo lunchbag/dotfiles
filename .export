@@ -28,6 +28,7 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)
 
 # Setup Android!
+export ANDROID_NDK_HOME=$HOME/.android-ndk
 export ANDROID_HOME=$HOME/.android-sdk
 export ANDROID_SDK=$ANDROID_HOME
 
