@@ -10,14 +10,8 @@ else # OS X `ls`
 	colorflag="-G"
 fi
 
-# Turn on hub extras
-#alias git=hub
-
 # Typo helpers :)
 alias gti=git
-
-# Shortcut to ssh into website
-alias jstarry.com="ssh root@104.131.113.58"
 
 # List all files colorized in long format
 alias l="ls -lF ${colorflag}"
@@ -103,3 +97,6 @@ alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 
 # Reload the shell (i.e. invoke as a login shell)
 alias reload="exec $SHELL -l"
+
+# Sublime
+alias subl="/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl "
