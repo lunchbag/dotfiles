@@ -5,7 +5,7 @@
 Clone the repository into `~/.dotfiles`. The bootstrapper script will pull in the latest version and copy the files to your home folder.
 
 ```bash
-git clone https://github.com/jstarry/dotfiles.git .dotfiles
+git clone https://github.com/lunchbag/dotfiles.git .dotfiles
 ```
 
 To run/update:
